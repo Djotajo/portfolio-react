@@ -1,68 +1,478 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+* {
+  font-family: "Roboto";
+  box-sizing: border-box;
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+html {
+  position: relative;
+  overflow-x: hidden;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+svg {
+  max-width: 20px;
+  width: 1rem;
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  text-decoration: none;
 }
 
 body {
-  margin: 0;
+  width: 100vw;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+}
+
+header {
+  max-width: 1000px;
+  position: relative;
+  width: 80%;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 0;
+  margin: 0 auto;
+  gap: 1rem;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.profile-pic-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.profile-pic-container > img {
+  width: 100%;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+.profile-pic-container > h1 {
+  position: absolute;
+  bottom: 1%;
+  margin: 0;
+  color: white;
+  font-weight: 900;
+  text-shadow: 1px 1px 2px black;
+}
+
+.profile-description-container {
+  text-align: center;
+  background-color: white;
+}
+
+.profile-description-container > p {
+  max-width: 400px;
+}
+
+.profile-description-container > :last-child {
+  font-size: 1.5rem;
+}
+
+.content {
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+}
+
+.container {
+  max-width: 90%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+}
+
+.project-screenshot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: orange;
+}
+
+.project-screenshot > img {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+  margin: auto;
+}
+
+.project-screenshot > img:hover {
+  transform: scale(1.05);
+}
+
+.project-description {
+  padding: 1rem;
+}
+
+.project-title {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1rem;
+}
+
+.project-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.footer-background {
+  background-color: #0891b2;
+}
+
+footer {
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+footer > div img,
+footer .devicon-github-original {
+  font-size: 2rem;
+  width: 2rem;
+  height: auto;
+}
+
+footer > div {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+footer > h2 {
+  text-align: center;
+}
+
+footer a {
+  color: white;
+}
+
+footer > picture,
+footer picture > img {
+  width: 100%;
+  display: block;
+  max-width: 100%;
+}
+
+.triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 400px solid #0891b2;
+  border-right: 800px solid transparent;
+  overflow: hidden;
+  max-width: 100%;
+  z-index: -2;
+}
+
+@media (max-width: 600px) {
+  .profile-pic-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    max-width: 400px;
   }
 }
+
+@media (min-width: 601px) and (max-width: 999px) {
+  header {
+    display: block;
+    position: relative;
+    text-align: center;
+    padding: 1rem;
+    padding-top: 7rem;
+    width: 90%;
+    background-color: transparent;
+  }
+
+  .profile-pic-container {
+    width: 150px;
+    float: left;
+    margin: 50px;
+    transform: scale(1.8) translate(-10%, -10%);
+  }
+
+  header h1 {
+    position: absolute;
+    bottom: 0;
+    left: 80px;
+    top: 0px;
+    width: 300px;
+    margin: 0.67em;
+  }
+
+  .profile-description-container {
+    padding: 5rem;
+    margin: auto;
+    line-height: 1.5;
+    text-align: center;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  .profile-description-container > p {
+    text-align: justify;
+    max-width: 100%;
+  }
+
+  .profile-description-container > h2 {
+    font-size: 2.5rem;
+    display: inline;
+    text-align: center;
+  }
+
+  .profile-description-container > :last-child {
+    display: none;
+  }
+
+  .content {
+    width: 90%;
+  }
+
+  .container {
+    max-width: 100%;
+    height: 100%;
+  }
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+    justify-items: center;
+    gap: 4rem;
+    height: 100%;
+  }
+
+  .project-title {
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    height: 50%;
+  }
+
+  .project-links {
+    gap: 0.5rem;
+  }
+
+  .project-title svg {
+    max-width: 100%;
+    width: 1.5rem;
+  }
+
+  .project-title h3 {
+    font-weight: 900;
+    flex-shrink: 1;
+    margin: 0;
+  }
+
+  .project-description {
+    height: 50%;
+    max-height: 100%;
+  }
+
+  footer {
+    width: 90%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  footer > div {
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  footer > picture,
+  footer picture > img {
+    display: block;
+  }
+
+  footer > picture {
+    max-width: 50%;
+    padding: 2rem 0 1rem 0;
+  }
+
+  .footer-info {
+    justify-content: space-between;
+  }
+
+  .triangle {
+    border-top: 500px solid #0891b2;
+    border-right: 2000px solid transparent;
+    overflow: hidden;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .triangle {
+    border-top: 500px solid #0891b2;
+    border-right: 3500px solid transparent;
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-items: center;
+    box-shadow: none;
+    text-align: center;
+    padding-top: 3rem;
+    gap: 0;
+    width: 100%;
+    background-color: transparent;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  .profile-pic-container {
+    margin: 0;
+    transform: none;
+  }
+
+  .profile-description-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-content: space-between;
+    text-align: justify;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 1rem;
+    width: 100%;
+    line-height: 1.5rem;
+  }
+
+  .profile-description-container p {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .profile-description-container > h2 {
+    padding: 1rem 0;
+    margin: 0;
+    font-size: 2rem;
+  }
+
+  .profile-description-container > :last-child {
+    text-align: end;
+  }
+
+  .content {
+    width: 100%;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 1fr;
+    justify-items: center;
+    gap: 2rem;
+    height: 100%;
+    line-height: 1.5rem;
+  }
+
+  .project-title {
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    height: 50%;
+  }
+
+  .project-links {
+    gap: 0.5rem;
+  }
+
+  .project-title svg {
+    max-width: 100%;
+    width: 1.5rem;
+  }
+
+  .project-title h3 {
+    font-weight: 900;
+    flex-shrink: 1;
+    margin: 0;
+  }
+
+  .project-description {
+    height: 50%;
+    max-height: 100%;
+  }
+
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 0;
+  }
+
+  footer > div {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+  }
+
+  .p footer {
+    justify-content: center;
+  }
+
+  .footer-info {
+    justify-content: space-between;
+  }
+
+  footer > picture {
+    margin: 1rem 0;
+    max-width: 50%;
+  }
+}
+
+/* Photo by <a href="https://unsplash.com/@richtervet?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Rich Tervet</a> on <a href="https://unsplash.com/photos/gray-laptop-computer-turned-on-q2GNdFmhxx4?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+   */
