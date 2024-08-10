@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Header from "./header";
+import Content from "./content";
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <header>
         <Header />
       </header>
+      <Content />
     </>
   );
 }
